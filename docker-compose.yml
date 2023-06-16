@@ -1,0 +1,11 @@
+version: '3'
+services:
+  data_builder:
+    image: data_builder
+    build: .
+    # command: tail -F anything
+    environment:
+      - bbox=-78.669528,-0.416925,-77.958163,0.504543
+      - geofabrik_url_path=/south-america/ecuador-latest.osm.pbf
+    volumes:
+      - ./data:/app/out
